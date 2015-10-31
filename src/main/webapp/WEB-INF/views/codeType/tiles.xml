@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+
+<tiles-definitions>
+
+	<definition name="codeType/list" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/codeType/list.jsp" />
+	</definition>
+
+	<definition name="codeType/create" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/codeType/create.jsp" />
+	</definition>
+
+	<definition name="codeType/view" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/codeType/view.jsp" />
+	</definition>
+
+	<definition name="codeType/edit" extends="layout">
+		<put-attribute name="content" value="/WEB-INF/views/codeType/edit.jsp" />
+	</definition>
+
+</tiles-definitions>

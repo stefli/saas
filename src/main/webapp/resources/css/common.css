@@ -1,0 +1,286 @@
+html body {
+	font-size: 12px;
+	font-family: "Microsoft YaHei", Î¢ÈíÑÅºÚ, Arial;
+	line-height: 150%;
+}
+
+* {
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+
+a,a:link,a:visited,a:hover {
+	color: #586064;
+}
+
+textarea,input {
+	outline: none;
+}
+
+body {
+	color: #586064;
+}
+
+hr {
+	border: none;
+	height: 4px;
+	background-color: #efefef;
+}
+
+.clear {
+	clear: both;
+}
+
+.login {
+	min-width: 260px;
+	min-height: 420px;
+	padding: 20px;
+	margin-top: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 260px;
+	height: 240px;
+	border: 1px solid #efefef;
+	line-height: 200%;
+	background-color: #fff;
+	-webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.40);
+	background: -ms-linear-gradient(top, #fafafa 0%, #e5e5e5 100%);
+	background: -moz-linear-gradient(top, #fafafa 0%, #e5e5e5 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fafafa),
+		color-stop(100%, #e5e5e5) );
+	filter: progid:DXImageTransform.Microsoft.gradient(  
+		                     
+		                     
+		                     startColorstr='#fafafa', endColorstr='#e5e5e5',
+		GradientType=0 );
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	overflow: hidden;
+}
+
+.login .logo {
+	margin-top: 10px;
+	height: 140px;
+	text-align: center;
+}
+
+.login .content {
+	float: left;
+}
+
+.login .content .input-section {
+	width: 230px;
+	height: 28px;
+	padding: 8px 0px 8px 8px;
+	background-color: #f3f5f6;
+	border: 1px solid #CCC;
+	cursor: pointer;
+	height: 28px;
+	margin-top: 4px;
+}
+
+.login .content .input-section span {
+	float: left;
+}
+
+.login .content .login-label {
+	display: none;
+}
+
+.login .content .login-input {
+	float: left;
+	width: 200px;
+	height: 30px;
+	text-indent: 4px;
+	border: none;
+	background-color: #f3f5f6;
+	-webkit-appearance: none;
+	background-color: #f3f5f6;
+}
+
+.login .content .error {
+	color: red;
+	margin-top: 4px;
+	height: 20px;
+}
+
+.login .content .remember-section {
+	margin-top: 8px;
+}
+
+.login .content .other-section a {
+	color: #108B86;
+}
+
+.login .content .login-button-group {
+	width: 360px;
+	margin-top: 20px;
+}
+
+.login .content .login-button {
+	cursor: pointer;
+	color: #fff;
+	width: 240px;
+	height: 30px;
+	border: none;
+	background-color: #108B86;
+}
+
+.copyright {
+	color: #fff;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 126px;
+	margin-top: 20px;
+}
+
+.header {
+	color: #fff;
+	vertical-align: middle;
+	background-color: #108B86;
+	height: 44px;
+}
+
+.header .searchbar {
+	float: left;
+	width: 400px;
+	margin-left: 10px;
+	padding: 8px;
+}
+
+.header .searchbar input[type=text] {
+	float: left;
+	width: 260px;
+	height: 26px;
+	padding-left: 4px;
+	border: none;
+	border-radius: 6px;
+}
+
+.header .searchbar input[type=image] {
+	cursor: pointer;
+	width: 26px;
+	border: none;
+	margin-left: 8px;
+}
+
+.header .logo {
+	margin: 8px;
+	float: left;
+}
+
+.header .sidebar {
+	float: right;
+	width: 320px;
+	margin-top: 12px;
+}
+
+.header .sidebar .welcome {
+	float: left;
+	margin-right: 8px;
+}
+
+.header .sidebar .thumbnail {
+	float: left;
+	margin-right: 4px;
+	margin-top: 2px;
+}
+
+.dropdown .dropdown-header {
+	float: left;
+	background-color: none;
+}
+
+.dropdown .separator {
+	float: left;
+	margin: 0px 20px;
+}
+
+.dropdown .dropdown-menu ul {
+	list-style: none;
+}
+
+.dropdown .dropdown-menu ul li {
+	float: left;
+	margin-right: 20px;
+}
+
+.dropdown .dropdown-menu ul li a {
+	color: #fff;
+}
+
+table {
+	background-color: #efefef;
+}
+
+table tr {
+	background-color: #fff;
+}
+
+table tr td {
+	padding: 4px;
+}
+
+table th {
+	font-weight: bold;
+	background-color: #ccc;
+}
+
+.menu {
+	padding: 4px 4px 4px 10px;
+	line-height: 38px;
+	height: 38px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+}
+
+.menu ul {
+	list-style: none;
+	float: right;
+	margin-right: 100px;
+}
+
+.menu ul li {
+	float: left;
+	margin-right: 40px;
+	height: 40px;
+}
+
+.menu ul li:hover {
+	border-bottom: 2px solid #108B86;
+}
+
+.menu ul li a {
+	font-size: 14px;
+}
+
+.content {
+	padding: 10px;
+	min-height: 500px;
+}
+
+.footer {
+	border: none;
+	border-top: 2px solid #efefef;
+	margin-left: 220px;
+}
+
+.left-side {
+	float: left;
+	width: 200px;
+	margin-right: 20px;
+}
+
+.left-side .thumbnail {
+	margin-bottom: 20px;
+}
+
+.right-side {
+	float: left;
+}

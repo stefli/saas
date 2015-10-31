@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<!-- Common non-security url configuration -->
+	<http pattern="/resources/**" security="none" />
+	<http pattern="/login**" security="none" />
+	<http pattern="/" security="none" />
+
+	<!-- Common configuration -->
+	<http auto-config="false" use-expressions="true"
+		entry-point-ref="loginUrlAuthenticationEntryPoint">
+		<intercept-url pattern="/**" access="authenticated" />
+		<custom-filter ref="tenantUsernamePasswordAuthenticationFilter"
+			position="FORM_LOGIN_FILTER" />
+		<session-management>
+			<concurrency-control max-sessions="100"
+				error-if-maximum-exceeded="true" />
+		</session-management>
+		<logout invalidate-session="true" logout-success-url="/login"
+			logout-url="/j_spring_security_logout" delete-cookies="JSESSIONID" />
+		<!-- CSRF will cause logout not work, need to be invoked under POST method -->
+		<!-- <csrf /> -->
+		<session-management invalid-session-url="/timeout" />
+		<access-denied-handler error-page="/403" />
+	</http>
+
+	<!-- Custom login entry point -->
+	<beans:bean id="loginUrlAuthenticationEntryPoint"
+		class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+		<beans:property name="loginFormUrl" value="/login" />
+	</beans:bean>
+
+	<!-- Authentication -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="daoAuthenticationProvider" />
+	</authentication-manager>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="userService">
+			<password-encoder hash="md5">
+				<salt-source user-property="salt" />
+			</password-encoder>
+		</authentication-provider>
+	</authentication-manager>
+
+	<!-- Pass tenantKey to login process -->
+	<beans:bean id="tenantUsernamePasswordAuthenticationFilter"
+		class="com.synnex.saas.platform.core.TenantUsernamePasswordAuthenticationFilter">
+		<beans:property name="authenticationManager" ref="authenticationManager" />
+		<beans:property name="authenticationFailureHandler"
+			ref="authenticationFailureHandler" />
+		<beans:property name="authenticationSuccessHandler"
+			ref="authenticationSuccessHandler" />
+	</beans:bean>
+
+	<!-- Authentication Failure Handler -->
+	<beans:bean id="authenticationFailureHandler"
+		class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+		<beans:property name="defaultFailureUrl" value="/login"></beans:property>
+	</beans:bean>
+
+	<!-- Authentication Success Handler -->
+	<beans:bean id="authenticationSuccessHandler"
+		class="com.synnex.saas.platform.core.PlatformSimpleUrlAuthenticationSuccessHandler">
+		<beans:property name="defaultSuccessUrl" value="/portal"></beans:property>
+	</beans:bean>
+
+</beans:beans>

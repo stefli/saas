@@ -1,0 +1,19 @@
+/*------------------------------------------------------------*/
+/*
+	CSS Template version 2.2
+	Create 2011/03/23
+	Ronnie Liu:ronniel@synnex.com EXT:1481
+
+	Project Name:Concentrix Renewal Management Platform2.0 
+	
+*/
+/*------------------------------------------------------------*/
+
+a,area { blr:expression(this.onFocus=this.blur()) } /* for IE */
+.normalInput { line-height:23px; }
+.focusInput { line-height:23px; }
+.marginTopN20 { margin-top:-20px; }
+
+/*-----------Moz Hack-------------*/
+
+body:-moz-last-node .navigation { width:190px; }
